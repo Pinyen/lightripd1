@@ -35,14 +35,14 @@ google.setOnLoadCallback(function() {
 			minHeight: 40,
 			minWidth: 150,
 		});
-		$(".active").click(function() {
-			$("form").submit();
+		//$(".active").click(function() {
+			//$("form").submit();
 
 			//$(".firstpage").hide();//處裡消掉的東西
 			//$(".menu").hide();//嵌入body裡面會不會比較好
 			//$("#mySchedule").show();
 			//$("#buttonFrame").show();
-		});
+		//});
 		$("#home").click(function() {
 			$(".firstpage").show();//處裡消掉的東西
 			$(".menu").show();//嵌入body裡面會不會比較好
@@ -88,10 +88,11 @@ function lightbox(content) {
 			max: 100,
 			step: 20,
 			slide: function( event, ui ) {
-				$( "#amoun2t" ).val( ui.value );
+				$( "#amount2" ).val( ui.value );
 			}
 		});
-		$( "#amount3" ).val( $( "#slider3" ).slider( "value3" ) );
+		$( "#amount2" ).val( $( "#slider2" ).slider( "value2" ) );
+		
 		$( "#slider3" ).slider({
 			orientation: "vertical",
 			value:50,
@@ -113,7 +114,7 @@ function lightbox(content) {
 				$( "#amount4" ).val( ui.value );
 			}
 		});
-		$( "#amount5" ).val( $( "#slider5" ).slider( "value5" ) );
+		$( "#amount4" ).val( $( "#slider4" ).slider( "value4" ) );
 		$( "#slider5" ).slider({
 			orientation: "vertical",
 			value:50,
@@ -129,7 +130,8 @@ function lightbox(content) {
 		
 	});
 </script>
-<link href="ccsp_project/_css/main.css" rel="stylesheet" type="text/css" />
+<!--<script type="text/javascript" src="assets/ajax.js"></script>-->
+<!--<link href="ccsp_project/_css/main.css" rel="stylesheet" type="text/css" /> -->
 </head>
 
 <body>
@@ -138,7 +140,7 @@ function lightbox(content) {
 		<div class="title"><h1 style="font-size:40px;">LighTrip 來去旅行吧！</h1></div>
 		<div class="map">
         
-		<div style="position:absolute; top:0; left:0; text-align:right"><img src="ccsp_project/taiwan_map.jpg" width="349" height="487" /></div>
+		<div style="position:absolute; top:0; left:0; text-align:right"><%= image_tag("taiwan_map.jpg", :height => '487', :width => '349')%></div>
         <div style="position:absolute; top:0; left:0; width: 241px;">
           <h1 style="color:#000000; text-align:left;">Step 1</h1>
           <h1 style="color:#000000; text-align:left;">選擇旅遊區塊</h1>
@@ -181,7 +183,7 @@ function lightbox(content) {
                 <div id="slider5" style="position:absolute; top:10px; left:310px; width:0px; height:80px"></div>
 			</div>
         </div>
-        <div class="active">
+        <div id="step3" class="active">
             <h1>Step 3 確認送出</h1>
         </div>
     </form>
@@ -197,6 +199,8 @@ function lightbox(content) {
 	<ul id='mySchedule' class='connectedSortable' style="display:none;">
       <h2>我的行程表</h2>
       <li class='block'><a href=javascript:lightbox('hahaha')>hahaha</a>
+      </li>
+      <li class='block'>
       </li>
   </ul>
     <div id="myMap"></div>
