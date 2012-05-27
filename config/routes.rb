@@ -2,8 +2,9 @@ LightripD1::Application.routes.draw do
   
   get "/step3" => "home#step3"
   get "/test" => "home#test"
-  
-
+  get "/test1" => "home#test1"
+  get "/test_smart" => "home#test_smart"
+  get "/test_box" => "home#test_box"
 
 
   get "/spots/new_backstage" => "spots#new_backstage"

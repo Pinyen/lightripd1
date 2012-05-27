@@ -10,6 +10,7 @@ type="text/javascript"></script>
 <link type="text/css" href="ccsp_project/css/ui-lightness/jquery-ui-1.8.20.custom.css" rel="stylesheet" />
 <script type="text/javascript" src="ccsp_project/js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="ccsp_project/js/jquery-ui-1.8.20.custom.min.js"></script>
+
 <script type="text/javascript">
 
 
@@ -26,7 +27,9 @@ google.setOnLoadCallback(function() {
 	// 所有行程
 	$(function() {
 		$( "#mapFrame, #mySchedule" ).sortable({
-			connectWith: ".connectedSortable"
+			connectWith: ".connectedSortable",
+			//items: "li";
+			cancel: ".ui-state-disabled"
 		}).disableSelection();
 		
 		$(".block").resizable({
@@ -146,7 +149,7 @@ function lightbox(content) {
           <h1 style="color:#000000; text-align:left;">選擇旅遊區塊</h1>
         </div>
 		</div>
-		<div class="guider">
+		<div id="intro" class="guider">
   			<h1>LighTrip 介紹</h1>
             <div>
             <span>這是一個可以自由產生行程的行程，只要選取想要旅遊的地圖區塊、依照你的喜好調整你的旅遊屬性，確認送出後即可產生一套懶人行程。</span><span>當然，產生後的行程你也可以做個性化調整喔！</span>
@@ -198,6 +201,11 @@ function lightbox(content) {
     </ul>
 	<ul id='mySchedule' class='connectedSortable' style="display:none;">
       <h2>我的行程表</h2>
+      <div>hi hi hi</div>
+      <li class='block ui-state-disabled'><a href=javascript:lightbox('hahaha')>Can't move</a>
+      </li>
+      <li class='block'><a href=javascript:lightbox('hahaha')>hahaha</a>
+      </li>
       <li class='block'><a href=javascript:lightbox('hahaha')>hahaha</a>
       </li>
       <li class='block'>

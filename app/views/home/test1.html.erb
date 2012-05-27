@@ -1,0 +1,56 @@
+ <head>
+   <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    </script>
+    <style type="text/css">
+      body {
+        margin: 20px;
+        font-family: courier, sans-serif;
+        font-size: 12px;
+      }
+      #map {
+        height: 480px;
+        width: 640px;
+        border: solid thin #333;
+        margin-top: 20px;
+      }
+    </style>
+    <script src="assets/google_direction_api.js"></script> <!--這行要加-->
+  </head>
+
+  
+  <body onload="initialize()">
+  <h1>Home#test1</h1>
+
+
+    <div id="inputs">
+      <pre class="prettyprint">
+      var origin1 = new google.maps.LatLng(25.018402,121.538675); // NTU
+      var origin2 = "106台北市大安區和平東路一段162號"; //師大
+      var destinationA = "台北火車站";
+      var destinationB = new google.maps.LatLng(25.03315,121.564451);
+      </pre>
+      <p><button type="button" onclick="calculateDistances();">Calculate
+        distances_driving(default)</button>打開console log</p>
+      <p><button type="button" onclick="calculateDistances_walking();">Calculate
+        distances_walking</button>打開console log</p>
+    </div>
+    <div id="outputDiv"></div>
+    <div id ="test"></div>
+    <div id="map"></div>
+    <div id="origin" lat="25.048738445154648" lon="121.51444435090525" address="台北市木新路二段一六一巷六弄五號三樓"></div>
+
+    <div id="destination" lat="24.9833219" lon="121.56873" address="台北市羅斯福路四段一號"></div>
+    <script type="text/javascript">
+    //$("#outputDiv").append($('#origin').attr('lat')+'<br>');
+    //$("#outputDiv").append($('#origin').attr('lon')+'<br>');
+    //$("#outputDiv").append($('#destination').attr('lat')+'<br>');
+    //$("#outputDiv").append($('#destination').attr('lon')+'<br>');
+
+
+    var origin1 = $('#origin').attr('address');
+    var destinationA = $('#destination').attr('address');
+
+    
+    </script>
+  </body>
+
